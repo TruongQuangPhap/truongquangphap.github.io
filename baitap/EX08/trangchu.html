@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Trang Cá Nhân Thiết Kế - Quang Pháp</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        header p {
+            font-style: italic;
+            font-size: 1.2em;
+        }
+
+        nav {
+            background-color: #34495e;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #2c3e50;
+        }
+
+        section {
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .skills, .services {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .skill, .service {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 8px #ddd;
+            padding: 20px;
+            flex: 1 1 250px;
+        }
+
+        .portfolio {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 8px #ccc;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1em;
+        }
+
+        form button {
+            background-color: #2c3e50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Quang Pháp</h1>
+    <p>Nhà thiết kế đồ họa & giao diện người dùng (UI Designer)</p>
+</header>
+
+<nav>
+    <a href="#about">Giới thiệu</a>
+    <a href="#skills">Kỹ năng</a>
+    <a href="#portfolio">Dự án</a>
+    <a href="#services">Dịch vụ</a>
+    <a href="#contact">Liên hệ</a>
+</nav>
+
+<section id="about">
+    <h2>Giới thiệu</h2>
+    <p>Xin chào! Tôi là <strong>Quang Pháp</strong>, một nhà thiết kế chuyên về UI/UX và đồ họa với hơn 3 năm kinh nghiệm. Tôi đam mê tạo ra các sản phẩm đẹp mắt, thân thiện với người dùng và hiệu quả về mặt truyền thông.</p>
+</section>
+
+<section id="skills">
+    <h2>Kỹ năng</h2>
+    <div class="skills">
+        <div class="skill">
+            <h3>Adobe Photoshop</h3>
+            <p>Chỉnh sửa hình ảnh chuyên nghiệp, thiết kế banner, poster, v.v.</p>
+        </div>
+        <div class="skill">
+            <h3>Figma / Adobe XD</h3>
+            <p>Thiết kế giao diện người dùng cho website và ứng dụng di động.</p>
+        </div>
+        <div class="skill">
+            <h3>HTML & CSS</h3>
+            <p>Biết cơ bản về mã hóa giúp giao tiếp tốt với lập trình viên.</p>
+        </div>
+    </div>
+</section>
+
+<section id="portfolio">
+    <h2>Dự án tiêu biểu</h2>
+    <div class="portfolio">
+        <div class="portfolio-item">
+            <img src="https://source.unsplash.com/featured/?design" alt="Dự án 1">
+        </div>
+        <div class="portfolio-item">
+            <img src="https://source.unsplash.com/featured/?uiux" alt="Dự án 2">
+        </div>
+        <div class="portfolio-item">
+            <img src="https://source.unsplash.com/featured/?appdesign" alt="Dự án 3">
+        </div>
+    </div>
+</section>
+
+<section id="services">
+    <h2>Dịch vụ</h2>
+    <div class="services">
+        <div class="service">
+            <h3>Thiết kế logo & thương hiệu</h3>
+            <p>Xây dựng bộ nhận diện chuyên nghiệp cho doanh nghiệp nhỏ và cá nhân.</p>
+        </div>
+        <div class="service">
+            <h3>Thiết kế giao diện web/app</h3>
+            <p>Thiết kế hiện đại, chuẩn UI/UX, tương thích nhiều nền tảng.</p>
+        </div>
+        <div class="service">
+            <h3>Tư vấn thiết kế</h3>
+            <p>Hỗ trợ phân tích nhu cầu và đề xuất giải pháp thiết kế phù hợp.</p>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Liên hệ</h2>
+    <form>
+        <input type="text" name="name" placeholder="Họ tên của bạn" required />
+        <input type="email" name="email" placeholder="Email liên hệ" required />
+        <textarea name="message" rows="5" placeholder="Nội dung tin nhắn" required></textarea>
+        <button type="submit">Gửi liên hệ</button>
+    </form>
+</section>
+
+<footer>
+    &copy; 2025 Quang Pháp - Nhà thiết kế giao diện & đồ họa
+</footer>
+
+</body>
+</html>
