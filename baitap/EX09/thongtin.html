@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thông Tin - Kinh Doanh Cá Nhân</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0;
+      background-color: #f5f5f5;
+    }
+    header {
+      background-color: #007bff;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background-color: #0056b3;
+      display: flex;
+      justify-content: center;
+    }
+    nav a {
+      color: white;
+      padding: 15px 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      background-color: #003d80;
+    }
+    .content {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 0 15px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #ccc;
+      padding: 20px;
+    }
+    footer {
+      background-color: #007bff;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+    /* Style form email */
+    .subscribe-form {
+      margin-top: 30px;
+      text-align: center;
+    }
+    .subscribe-form input[type="email"] {
+      padding: 10px;
+      width: 60%;
+      max-width: 300px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+    .subscribe-form button {
+      padding: 10px 20px;
+      margin-left: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .subscribe-form button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+    <h1>Thông Tin Về Kinh Doanh Cá Nhân</h1>
+</header>
+
+<nav>
+    <a href="trangchu.html">Trang Chủ</a>
+    <a href="thongtin.html">Thông Tin</a>
+    <a href="dichvu.html">Dịch Vụ</a>
+</nav>
+
+<section class="content">
+    <h2>Giới Thiệu Chung</h2>
+    <p>Tôi là Quang Pháp, chuyên kinh doanh các sản phẩm chất lượng với giá cả hợp lý.</p>
+    <p>Chúng tôi cam kết mang đến sự hài lòng cho khách hàng với dịch vụ tận tâm và uy tín.</p>
+
+    <h2>Tầm Nhìn & Sứ Mệnh</h2>
+    <p>Phát triển kinh doanh bền vững, đem lại giá trị thực cho khách hàng và cộng đồng.</p>
+
+    <h2>Đội Ngũ Hỗ Trợ</h2>
+    <ul>
+        <li>Quang Pháp - Chủ cửa hàng</li>
+        <li>Nhân viên tư vấn</li>
+        <li>Nhân viên chăm sóc khách hàng</li>
+    </ul>
+
+    <div class="subscribe-form">
+      <h3>Đăng Ký Nhận Thông Tin Qua Email</h3>
+      <form onsubmit="alert('Cảm ơn bạn đã đăng ký!'); return false;">
+        <input type="email" placeholder="Nhập email của bạn" required />
+        <button type="submit">Đăng Ký</button>
+      </form>
+    </div>
+</section>
+
+<footer>
+    &copy; 2025 Kinh Doanh Cá Nhân - Bán Hàng Online
+</footer>
+
+</body>
+</html>
