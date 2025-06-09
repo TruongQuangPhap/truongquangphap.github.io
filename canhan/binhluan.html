@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Bình Luận - Quang Pháp</title>
+<style>
+  body { font-family: Arial, sans-serif; background: #f9fbff; color: #333; margin:0; padding:20px; max-width:600px; margin:auto;}
+  h1, h2 { color: #003366; text-align:center; }
+  form, .comments { background:#fff; padding:20px; border-radius:6px; box-shadow:0 0 8px #ccc; margin-bottom:20px;}
+  label { display:block; margin-top:10px; font-weight:bold; }
+  input, textarea { width:100%; padding:8px; margin-top:5px; border:1px solid #ccc; border-radius:4px; font-size:14px;}
+  textarea { resize: vertical; height:80px; }
+  button { background:#003366; color:#fff; border:none; padding:10px 20px; border-radius:4px; cursor:pointer; margin-top:15px; }
+  button:hover { background:#0055a5; }
+  .comment { border-bottom:1px solid #eee; padding:10px 0; }
+  .comment:last-child { border:none; }
+  .name { font-weight:bold; color:#003366; }
+  .date { font-size:12px; color:#888; margin-left:10px; }
+  .content { margin-top:6px; white-space: pre-wrap; }
+</style>
+</head>
+<body>
+
+<h1>Bình Luận & Phản Hồi</h1>
+
+<form id="form">
+  <label for="name">Họ và tên</label>
+  <input type="text" id="name" required placeholder="Nguyễn Văn A" />
+  
+  <label for="comment">Ý kiến / Phản hồi</label>
+  <textarea id="comment" required placeholder="Nhập ý kiến của bạn..."></textarea>
+  
+  <button type="submit">Gửi Bình Luận</button>
+</form>
+
+<div class="comments" id="comments">
+  <h2>Bình luận gần đây</h2>
+  <p>Chưa có bình luận nào.</p>
+</div>
+
+<script>
+  const form = document.getElementById('form');
+  const commentsEl = document.getElementById('comments');
+
+  function escapeHTML(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+  }
+
+  // Bình luận mẫu về bất động sản
+  const defaultComments = [
+    {
+      name: "Lan Anh",
+      comment: "Tôi thấy thị trường bất động sản ở Nha Trang rất tiềm năng. Cần đầu tư dài hạn thì rất hợp lý.",
+      date: "2025-06-08T10:15:00"
+    },
+    {
+      name: "Minh Tuấn",
+      comment: "Dịch vụ tư vấn rất chuyên nghiệp, giúp tôi lựa chọn được căn hộ phù hợp với ngân sách.",
+      date: "2025-06-07T14:30:00"
+    },
+    {
+      name: "Hương Giang",
+      comment: "Mong Quang Pháp cập nhật thêm nhiều dự án mới và tư vấn kỹ hơn về pháp lý.",
+      date: "2025-06-06T09:45:00"
+    }
+  ];
+
+  function loadComments() {
+    let comments = JSON.parse(localStorage.getItem('comments'));
+    if (!comments || comments.length === 0) {
+      comments = defaultComments;
+      localStorage.setItem('comments', JSON.stringify(comments));
+    }
+    commentsEl.innerHTML = '<h2>Bình luận gần đây</h2>';
+    comments.forEach(c => {
+      const d = document.createElement('div');
+      d.classList.add('comment');
+      d.innerHTML = `<span class="name">${escapeHTML(c.name)}</span>
+                     <span class="date">${new Date(c.date).toLocaleString('vi-VN')}</span>
+                     <div class="content">${escapeHTML(c.comment)}</div>`;
+      commentsEl.appendChild(d);
+    });
+  }
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const name = form.name.value.trim();
+    const comment = form.comment.value.trim();
+    if (!name || !comment) return alert('Vui lòng nhập đủ thông tin!');
+    let comments = JSON.parse(localStorage.getItem('comments')) || [];
+    comments.unshift({name, comment, date: new Date().toISOString()});
+    if (comments.length > 20) comments.pop();
+    localStorage.setItem('comments', JSON.stringify(comments));
+    loadComments();
+    form.reset();
+    alert('Cảm ơn bạn đã gửi ý kiến!');
+  });
+
+  loadComments();
+</script>
+
+</body>
+</html>
